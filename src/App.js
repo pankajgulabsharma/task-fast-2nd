@@ -1,26 +1,29 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Container, Grid, Paper, Typography } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import Header from "./components/Header/Header";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  sideImage: {
-    border: "1px solid red",
-    width: "42vw",
+  // sideImage: {
+  //   // border: "1px solid red",
+  //   width: "100% !important",
+  //   height: "100% !important",
+  // },
+  container: {
+    // border: "1px solid red",
+    width: "100vw",
     height: "100vh",
-    overflow: "hidden",
-    // backgroundSize: "contain",
-    // backgroundRepeat: "no-repeat",
-    // display: "flex",
-    // alignItems: "center",
-    // justifyContent: "center",
-    backgroundSize: "cover",
-  },
-  b: {
-    border: "1px solid red",
   },
   title: {
     paddingBottom: "50px",
@@ -49,13 +52,23 @@ const useStyles = makeStyles((theme) => ({
     height: "100px",
     padding: "30px",
   },
+
+  card: {
+    width: "100%",
+    height: "100%",
+    margin: "auto",
+  },
+  media: {
+    height: 715,
+    border: "none",
+  },
 }));
 function App() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container>
-        <Grid item xs={12} sm={12} md={7} lg={7} className={classes.b}>
+      <Grid container className={classes.container}>
+        <Grid item xs={12} sm={12} md={7} lg={7}>
           <Header />
           <Container maxWidth="sm">
             <Typography variant="h1" className={classes.title}>
@@ -75,11 +88,17 @@ function App() {
             </Grid>
           </Container>
         </Grid>
-        <Grid item xs={12} sm={12} md={5} lg={5}>
-          <img
+        <Grid item xs={12} sm={12} md={5} lg={5} className={classes.green}>
+          <Card className={classes.card}>
+            <CardMedia
+              className={classes.media}
+              image={`${process.env.PUBLIC_URL}/assets/images/flowerimage.jpg`}
+            />
+          </Card>
+          {/* <img
             src={`${process.env.PUBLIC_URL}/assets/images/flowerimage.jpg`}
             className={classes.sideImage}
-          />
+          /> */}
         </Grid>
       </Grid>
     </div>
