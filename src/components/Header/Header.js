@@ -18,6 +18,8 @@ const useStyles = makeStyles({
   button: {
     color: "#000",
     // border: "1px solid red",
+    textTransform: "none",
+    fontWeight: "bold",
   },
 });
 function Header() {
