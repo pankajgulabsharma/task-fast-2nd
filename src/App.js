@@ -56,12 +56,18 @@ const useStyles = makeStyles((theme) => ({
   card: {
     width: "100%",
     height: "100%",
-    margin: "auto",
+    // margin: "auto",
   },
   media: {
     height: 715,
     border: "none",
   },
+  // image: {
+  //   height: "100%",
+  //   [theme.breakpoints.down("md")]: {
+  //     height: "50%",
+  //   },
+  // },
 }));
 function App() {
   const classes = useStyles();
@@ -88,7 +94,7 @@ function App() {
             </Grid>
           </Container>
         </Grid>
-        <Grid item xs={12} sm={12} md={5} lg={5} className={classes.green}>
+        <Grid item xs={12} sm={12} md={5} lg={5} className={classes.image}>
           <Card className={classes.card}>
             <CardMedia
               className={classes.media}
